@@ -28,6 +28,12 @@ DEFHOOK(void, CPlayer__UpdateController, (void* thiz, float dt)) {
         NEvent::CSendEvent<>::SendMsg("upg.companion.activate.p1.l1");
     }
 
+    if (GetAsyncKeyState(VK_F3))
+    {
+        NEvent::CSendEvent<>::SendMsg("upg.companion.deactivate.p1.l0");
+        NEvent::CSendEvent<>::SendMsg("upg.companion.deactivate.p1.l1");
+    }
+
     return CPlayer__UpdateController_orig(thiz, dt);
 }
 
